@@ -1,11 +1,10 @@
 ![DSC FPTU HCMC](../assets/images/dsc-fptu-hcmc/DSC_FPT_University_HCMC_Horizontal_Logo.png)
 
-# Java Virtual Machine Tutorials
-### Hand-on labs
+# 2 - Java Virtual Machine Flags Tutorial
+### Hand-on lab
 
 ---------------------
 ## Prerequisites:
-- A happy ```smile```.
 - Having a Java Virtual Machine installed and ready to be run.
 - Having a ```Terminal``` or ```Command-line```.
 - No ```Java IDE``` is required.
@@ -14,21 +13,24 @@
 
 ### !!!PLEASE READ BEFORE PROCEEDING
 
-- There are ```5``` sections in this tutorial:
+```
+In this tutorial, there is something different than yours:
+- Operating System: macOS 10.14.6.
+- Java Virtual Machine: AdoptOpenJDK OpenJ9 Java Virtual Machine 8.
+```
 
-+ ```1``` - Java Objects Life Cycle.
+```
 
-+ ```2``` - Java Virtual Machine Flags.
+# TO BE DONE
 
-+ ```3``` - Java Native Interface Tutorial.
+```
 
-+ ```4``` - Eclipse Collections Framework.
-
-+ ```5``` - Shopping Cart Problem.
-
-If you do have any question, please ask. Don't be shy!
+Good luck!
 
 --------------
+
+
+Finally, we successfully did the lab.
 
 If you are not done with the lab, you can easily find and run to see the result by ```downloading/cloning this repository``` and run for yourself.
 
