@@ -60,12 +60,17 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
 ```
 
 You must specific JAVA_HOME Path before doing this. For example, my machine:
-JAVA_HOME_PATH: ``` /Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/```
-SYSTEM_TYPE: ```darwin | linux | windows```
-INPUT_C_FILE: ```The name of the C to be compiled to external library.```
-LIB_OUTPUT_FILE: ```The name of the library file want to be loaded in Java code.```
-LIB_OUTPUT_EXTENSION: ```dll | so | dylib```
+JAVA_HOME_PATH: ```/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/```
 
+SYSTEM_TYPE: ```darwin``` (for macOS)  or ```linux``` (for Linux) or ```windows``` (for Windows).
+
+INPUT_C_FILE: ```The name of the C to be compiled to external library.```
+
+LIB_OUTPUT_FILE: ```The name of the library file want to be loaded in Java code.```
+
+LIB_OUTPUT_EXTENSION: ```dll``` (for Windows) or  ```so``` (for Linux) or ```dylib``` (for macOS).
+
+Then we use the ```gcc``` compiler tool to compile the C file into a specified library file.
 ```
 gcc -I${JAVA_HOME_PATH}/include -I${JAVA_HOME_PATH}/include/${SYSTEM_TYPE}  -shared -o ${LIB_OUTPUT_FILE}.${LIB_OUTPUT_EXTENSION} ${INPUT_C_FILE}.c
 ```
