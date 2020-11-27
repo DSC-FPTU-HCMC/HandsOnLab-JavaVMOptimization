@@ -81,7 +81,7 @@ public class JNI {
 -----------------
 # Step 2: GENERATE C HEADER FILE USING JAVA TOOLS
 
-Generate C header file by using the compilation method of ```javac``` to convert the writtent Java file into C header file to be used in the C main file.
+- Generate C header file by using the compilation method of ```javac``` to convert the written Java file into C header file to be used in the C main file.
 ```
 javac -h . JNI.java
 ```
@@ -89,19 +89,16 @@ javac -h . JNI.java
 After having the generated C header file, we now create a new ```.c``` extension file and write down the code.
 
 ```
-touch JNI.c
+nano JNI.c
 ```
 
 - Write down the code (Delete the comment if you don't like):
 
 ```
-/*
-* Include the main header file of Java Native Interface
-*/
+//Include the main header file of Java Native Interface
 #include <jni.h>
-/*
-* Include the generated header file.
-*/
+
+//Include the generated header file.
 #include "JNI.h"
 
 JNIEXPORT void JNICALL Java_JNI_greeting
@@ -121,7 +118,8 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
   }
 ```
 
-You must specific JAVA_HOME Path before doing this. For example, my machine:
+- You must specify JAVA_HOME Path before doing this. For example:
+
 JAVA_HOME_PATH: ```/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/```
 
 SYSTEM_TYPE: ```darwin``` (for macOS)  or ```linux``` (for Linux) or ```windows``` (for Windows).
