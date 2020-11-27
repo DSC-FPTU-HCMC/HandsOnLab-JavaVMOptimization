@@ -1,30 +1,81 @@
 
-This sub-repository is to learn JNI
+#3 - Java Native Interface Tutorial
+##This sub-repository is to learn JNI
+---------------------
+!!!PLEASE READ BEFORE PROCEEDING
+```
+In this tutorial, there is something different than yours:
+- Operating System: macOS 10.14.6.
+- Java Virtual Machine: AdoptOpenJDK OpenJ9 Java Virtual Machine 8.
+- C Compiler: Apple CLang version 11.0.0.
 
-Firstly, create a Java file (.java) by magic. For example I used: ```nano JNI.java```.
-Then write down the following code:
+If you are using Windows, please install GNU GCC Compiler or LLVM Clang or something that can do the C Compilation thing.
+
+If you are using Linux, make sure you do have GCC Compiler.
+
+If you are using macOS, there is no need for the compiler because Apple Inc. has already embedded the compiler in the operating system.
+
+
+Make sure you have your Java Virtual Machine installed. OpenJDK or AdoptOpenJDK are both compatible for this tutorial.
+
+-- For checking GCC Compiler version or make sure it is already installed, using the following command: gcc --version
+```
+
+In order to use the ```JNI (Java Native Interface)``` as an external dynamic library for the Java code, we should follow the topic and be careful!
+
+Good luck!
+
+--------------
+#Step 1: CREATE A JAVA CLASS THAT CONTAINS 'NATIVE' KEYWORD IN THE ABSTRACT METHODS
+
+In this tutorial, we will create a Java file named ```JNI.java```. You can freely change your filename but rememeber what are you going to do with.
+
+To create a new external library, we must define our ```abstract method``` just like how we declare a full-body method for a class which implemented an interface/abstract class but with ```native``` keyword.
+
+Firstly, we create a Java file (.java) by magic.
+- For example, in macOS we use the below command to enter the GNU Nano Editor for the Java coding. For the Linux system, the ```nano``` command should be working for you too. If not, please install an editor to continue.
+```
+nano JNI.java
+```
+
+- In Windows OS, the command should be changed a little but still have the same meaning, please do make sure this is the first time you are going to create this file:
+```
+copy nul JNI.java > nul
+notepad JNI.java
+```
+
+We are not going to use an IDE for this lab, so please do the coding like the time we first do the Java fundamental coding and bare ```javac``` command.
+
+Then we write down or copy the following code (you can remove the comment if you don't like and please change the ```.dylib``` extension to your OS's type we learnt before):
 ```
 public class JNI {
 
+    //Load the native dynamic library first
     static {
-        System.loadLibrary("JNI.dylib");
+        System.loadLibrary("JNI.dylib"); //Please change the extension
+                                          //if you don't use macOS
     }
+
+    //We declare the following 3 abstract methods with native keyword for example
     public native void greeting();
     public native String getMessageFromInputString(String msg);
     public native int getSumOfTwoNumbers(int a, int b);
 
+    //Do the coding as usual
     public static void main(String[] args) {
         JNI jni = new JNI();
         jni.greeting();
-        
         System.out.println(jni.getMessageFromInputString("Hello world"));
         System.out.println(jni.getSumOfTwoNumbers(1, 2));
     }
 }
 ```
 
-- You must declare the ```System.loadLibrary("...libfile...");``` in the static block to load the library first.
-- Then declare the methods which only contain empty body with the "native" keyword.
+- For macOS/Linux users, please do the combination of keys ```Ctrl + X``` and type ```Y``` key to attempt to save the file.
+- For Windows users, please do the combination of keys ```Ctrl + S``` to save the file.
+
+-----------------
+#Step 2: GENERATE C HEADER FILE USING ```javac```
 
 Get the C header file by using the compilation method of javac to convert the Java file into header file to be used in the C main file.
 ```
