@@ -1,8 +1,12 @@
+# 3 - Java Native Interface Tutorial
+## This sub-repository is to learn JNI
 
-#3 - Java Native Interface Tutorial
-##This sub-repository is to learn JNI
 ---------------------
-!!!PLEASE READ BEFORE PROCEEDING
+## Prerequisites:
+- Nothing yet.
+
+### !!!PLEASE READ BEFORE PROCEEDING
+
 ```
 In this tutorial, there is something different than yours:
 - Operating System: macOS 10.14.6.
@@ -26,7 +30,7 @@ In order to use the ```JNI (Java Native Interface)``` as an external dynamic lib
 Good luck!
 
 --------------
-#Step 1: CREATE A JAVA CLASS THAT CONTAINS 'NATIVE' KEYWORD IN THE ABSTRACT METHODS
+# Step 1: CREATE A JAVA CLASS THAT CONTAINS 'NATIVE' KEYWORD IN THE ABSTRACT METHODS
 
 In this tutorial, we will create a Java file named ```JNI.java```. You can freely change your filename but rememeber what are you going to do with.
 
@@ -75,22 +79,29 @@ public class JNI {
 - For Windows users, please do the combination of keys ```Ctrl + S``` to save the file.
 
 -----------------
-#Step 2: GENERATE C HEADER FILE USING ```javac```
+# Step 2: GENERATE C HEADER FILE USING JAVA TOOLS
 
-Get the C header file by using the compilation method of javac to convert the Java file into header file to be used in the C main file.
+Generate C header file by using the compilation method of ```javac``` to convert the writtent Java file into C header file to be used in the C main file.
 ```
 javac -h . JNI.java
 ```
 
-Then create a C file.
+After having the generated C header file, we now create a new ```.c``` extension file and write down the code.
+
 ```
 touch JNI.c
 ```
 
-- Write down the code.
+- Write down the code (Delete the comment if you don't like):
 
 ```
+/*
+* Include the main header file of Java Native Interface
+*/
 #include <jni.h>
+/*
+* Include the generated header file.
+*/
 #include "JNI.h"
 
 JNIEXPORT void JNICALL Java_JNI_greeting
