@@ -1,6 +1,6 @@
-![DSC FPTU HCMC](../assets/images/dsc-fptu-hcmc/DSC_FPT_University_HCMC_Horizontal_Logo.png)
+![DSC FPTU HCMC](assets/images/dsc-fptu-hcmc/DSC_FPT_University_HCMC_Horizontal_Logo.png)
 
-# Java Virtual Machine Tutorials
+# Java Virtual Machine Optimization
 ### Hand-on labs
 
 ---------------------
@@ -36,6 +36,6 @@ If you are not done with the lab, you can easily find and run to see the result 
 
 # Thank you!
 
-![DSC FPTU HCMC](../assets/images/dsc-fptu-hcmc/HOME_PAGE_BANNERS.png)
+![DSC FPTU HCMC](assets/images/dsc-fptu-hcmc/HOME_PAGE_BANNERS.png)
 
 ------------
