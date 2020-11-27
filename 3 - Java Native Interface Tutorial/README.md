@@ -199,14 +199,17 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
 ---
 
 - I'm using ```macOS``` and have the ```AdoptOpenJDK OpenJ9 JVM 8``` installed, so the full path of the JVM should be:
+
 -> ```JAVA_HOME_PATH```: ```/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/```
 
 
 - For Linux users, with the ```AdoptOpenJDK OpenJ9 JVM 8``` installed, the path should be:
+
 -> ```JAVA_HOME_PATH```: ``` \\ ```
 
 
 - For Windows users, with the ```AdoptOpenJDK OpenJ9 JVM 8``` installed, the path should be:
+
 -> ```JAVA_HOME_PATH```: ``` "%homedrive%\Program Files\Java\ ```
 
 ---
@@ -214,9 +217,13 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
 - Pick one and you are good to go.
 
 ```SYSTEM_TYPE```: 
+
 -> ```darwin``` (for macOS users).
+
 ->  ```linux``` (for Linux users).
+
 -> ```windows``` (for Windows users).
+
 
 ---
 
