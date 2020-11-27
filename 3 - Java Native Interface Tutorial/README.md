@@ -81,12 +81,12 @@ public class JNI {
 -----------------
 # Step 2: GENERATE C HEADER FILE USING JAVA TOOLS
 
-- Generate C header file by using the compilation method of ```javac``` to convert the written Java file into C header file to be used in the C main file.
+- Generate C header file by using the compilation method of ```javac``` to convert the written Java file into C header file to be used in the ```.c``` file.
 ```
 javac -h . JNI.java
 ```
 
-After having the generated C header file, we now create a new ```.c``` extension file and write down the code.
+After having the generated C header file with the filename ```JNI.h```, we now create a new ```.c``` file and write down the code.
 
 ```
 nano JNI.c
@@ -118,7 +118,9 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
   }
 ```
 
-- You must specify JAVA_HOME Path before doing this. For example:
+You can have a look at the generated C header file, ```JNI.h``` contains the abstract functions just like how we implemented those functions in the ```.c``` file.
+
+- You must specify JAVA_HOME Path before doing the next step. For example:
 
 JAVA_HOME_PATH: ```/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/```
 
