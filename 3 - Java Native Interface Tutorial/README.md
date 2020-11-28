@@ -73,7 +73,7 @@ notepad JNI.java
 
 We are not going to use an IDE for this lab, so please do the coding like the time we first do the Java fundamental coding and bare ```javac``` command.
 
-Then we write down or copy the following code (you can remove the comment if you don't like and please change the ```.dylib``` extension to your OS's type we learnt before):
+Then we write down or copy the following code (you can remove the comments if you don't like):
 
 
 ```java
@@ -81,8 +81,7 @@ public class JNI {
 
     //Load the native dynamic library first
     static {
-        System.loadLibrary("JNI.dylib"); //Please change the extension
-                                          //if you don't use macOS
+        System.loadLibrary("JNI");
     }
 
     //We declare the following 3 abstract methods with native keyword for example
@@ -128,7 +127,7 @@ copy nul JNI.c > nul
 notepad JNI.c
 ```
 
-- Write down the code (Delete the comment if you don't like):
+- Write down the code (Delete the comments if you don't like):
 
 ```c
 //Include the main header file of Java Native Interface
@@ -218,14 +217,14 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
 -> ```JAVA_HOME_PATH```: ```/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/```
 
 
-- For Linux users, with the ```AdoptOpenJDK OpenJ9 JVM 8``` installed, the path should be:
+- For Linux users, with the ```Java VM specific-vendor``` installed, the path should be:
 
--> ```JAVA_HOME_PATH```: ``` \\ ```
+-> ```JAVA_HOME_PATH```: ``` Please find it yourself by using "echo $JAVA_HOME"```
 
 
-- For Windows users, with the ```AdoptOpenJDK OpenJ9 JVM 8``` installed, the path should be:
+- For Windows users, for example I installed the ```Oracle Hotspot JVM 8 build 271``` installed, the path should be:
 
--> ```JAVA_HOME_PATH```: ``` "%homedrive%\Program Files\Java\ ```
+-> ```JAVA_HOME_PATH```: ``` "%homedrive%\Program Files\Java\jdk1.8.0_271\```
 
 ---
 
@@ -237,7 +236,7 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
 
 ->  ```linux``` (for Linux users).
 
--> ```windows``` (for Windows users).
+-> ```win32``` (for Windows users).
 
 
 ---
@@ -266,10 +265,17 @@ gcc -I${JAVA_HOME_PATH}/include -I${JAVA_HOME_PATH}/include/${SYSTEM_TYPE}  -sha
 ```
 
 
-For me, it should be:
+For me (macOS), it should be:
 
 ```bash
-gcc -I$/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home//include -I/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/include/darwin -shared -o JNI.dylib JNI.c
+gcc -I$/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/include/darwin -shared -o JNI.dylib JNI.c
+```
+
+
+For me (Windows x64), it should be:
+
+```bash
+gcc -I"%homedrive%\Program Files\Java\jdk1.8.0_271\include" -I"%homedrive%\Program Files\Java\jdk1.8.0_271\include\win32"  -shared -o JNI.dll JNI.c
 ```
 
 After the compilation from the ```.c``` file, you will have your dynamic library file appeared for now without any error.
@@ -313,6 +319,25 @@ Hello World from void method!
 Finally, we successfully did the lab.
 
 If you are not done with the lab, you can easily find and run to see the result by ```downloading/cloning this repository``` and run for yourself.
+
+------------
+## Troubleshoot:
+
+If you occur the error ```Exception in thread "main" java.lang.UnsatisfiedLinkError: no JNI.dylib in java.library path: ."```
+
+You may need to fix it by re-open the ```JNI.java``` file. At the ```static block``` change it to the following code:
+
+```java
+...
+    //Load the native dynamic library first
+    static {
+        System.setProperty("java.library.path", ".");
+        System.load("The full path of the dynamic library file");
+    }
+...
+```
+
+Then re-compile the Java file into bytecode file and it should be running fine.
 
 -------------
 
