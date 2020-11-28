@@ -30,6 +30,7 @@ I assume you have already set your Java home path in the ```System variables``` 
 
 
 ![Sys path Java Home](assets/sys-path-java-var.png)
+
 and you are good to go.
 
 If you are using Linux, you already have the default GNU GCC.
