@@ -18,17 +18,27 @@ In this tutorial, there is something different than yours:
 - Operating System: macOS 10.14.6.
 - Java Virtual Machine: AdoptOpenJDK OpenJ9 Java Virtual Machine 8.
 - C Compiler: Apple CLang version 11.0.0.
-
-If you are using Windows, please install GNU GCC Compiler or LLVM Clang or something that can do the C Compilation thing.
-
-If you are using Linux, make sure you do have GCC Compiler.
-
-If you are using macOS, there is no need for the compiler because Apple Inc. has already embedded the compiler in the operating system.
+```
 
 
+If you are using Windows, please download the ```"MinGW64.7z"``` and move to ```C:\``` directory then click ```"Extract Here"``` the compressed file. After that, open the command-line then type
+```bash 
+path %PATH%;%homedrive%\MinGW64\bin
+``` 
+and you are good to go.
+
+If you are using Linux, you already have the default GNU GCC.
+
+If you are using macOS, there is no need for the compiler installation because Apple Inc. has already embedded the compiler in their operating system.
+
+
+```
 Make sure you have your Java Virtual Machine installed. OpenJDK or AdoptOpenJDK are both compatible for this tutorial.
+```
+
 
 -- For checking GCC Compiler version or make sure it is already installed, using the following command:
+```bash
 gcc --version
 ```
 
