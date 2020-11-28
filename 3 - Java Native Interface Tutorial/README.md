@@ -21,7 +21,7 @@ In this tutorial, there is something different than yours:
 ```
 
 
-If you are using Windows, please download the ```"MinGW64.7z"``` and move to ```C:\``` directory then click ```"Extract Here"``` the compressed file. After that, open the command-line then type
+If you are using Windows, please download MinGW64.7z[MinGW64](https://github.com/DSC-FPTU-HCMC/HandsOnLab-JavaVMOptimization/blob/master/3%20-%20Java%20Native%20Interface%20Tutorial/MinGW64.7z) and move to ```C:\``` directory then click ```"Extract Here"``` the compressed file. After that, open the command-line then type
 ```bash 
 path %PATH%;%homedrive%\MinGW64\bin
 ``` 
