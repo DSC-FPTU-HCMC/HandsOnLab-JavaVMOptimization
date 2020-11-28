@@ -27,6 +27,8 @@ path %PATH%;%homedrive%\MinGW64\bin
 ``` 
 
 I assume you have already set your Java home path in the ```System variables``` section of ```Path``` like the below image (Skip this if your ```java``` and ```javac``` command running both fine):
+
+
 ![Sys path Java Home](assets/sys-path-java-var.png)
 and you are good to go.
 
