@@ -25,6 +25,9 @@ If you are using Windows, please download the ```"MinGW64.7z"``` and move to ```
 ```bash 
 path %PATH%;%homedrive%\MinGW64\bin
 ``` 
+
+I assume you have already set your Java home path in the ```System variables``` section of ```Path``` like the below image (Skip this if your ```java``` and ```javac``` command running both fine):
+![Sys path Java Home](assets/sys-path-java-var.png)
 and you are good to go.
 
 If you are using Linux, you already have the default GNU GCC.
