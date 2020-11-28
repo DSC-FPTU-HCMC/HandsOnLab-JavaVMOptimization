@@ -223,7 +223,7 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
 | --- | --- |
 | ```/Library/Java/JavaVirtualMachines/adoptopenjdk8-openj9.jdk/Contents/Home/``` | I'm using ```macOS``` and have the ```AdoptOpenJDK OpenJ9 JVM 8``` installed, so the full path of the JVM |
 | ``` Please find it yourself by using "echo $JAVA_HOME"``` | For Linux users, with the ```Java VM specific-vendor``` installed |
-| ``` "%homedrive%\Program Files\Java\jdk1.8.0_271\``` | For Windows users, for example I installed the ```Oracle Hotspot JVM 8 build 271``` installed |
+| ``` "%homedrive%\Program Files\Java\jdk1.8.0_271\"``` | For Windows users, for example I installed the ```Oracle Hotspot JVM 8 build 271``` installed |
 
 
 ---
