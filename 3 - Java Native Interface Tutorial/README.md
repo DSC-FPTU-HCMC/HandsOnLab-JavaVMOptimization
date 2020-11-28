@@ -238,12 +238,11 @@ JNIEXPORT jint JNICALL Java_JNI_getSumOfTwoNumbers
 
 ```SYSTEM_TYPE```: 
 
--> ```darwin``` (for macOS users).
-
-->  ```linux``` (for Linux users).
-
--> ```win32``` (for Windows users).
-
+| System | Description |
+| --- | --- |
+| darwin | For macOS users |
+| linux | For Linux users |
+| win32 | For Windows users |
 
 ---
 
