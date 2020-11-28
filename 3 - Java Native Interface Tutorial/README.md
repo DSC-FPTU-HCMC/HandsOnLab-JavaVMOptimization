@@ -42,6 +42,10 @@ Make sure you have your Java Virtual Machine installed. OpenJDK or AdoptOpenJDK 
 gcc --version
 ```
 
+![GCC Windows](assets/gcc-windows.png)
+
+![GCC macOS](assets/gcc-macos.png)
+
 In order to use the ```JNI (Java Native Interface)``` as an external dynamic library for the Java code, we should follow the topic and be careful!
 
 Good luck!
