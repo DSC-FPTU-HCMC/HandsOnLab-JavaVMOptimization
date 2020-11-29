@@ -16,15 +16,10 @@
 
 - There are ```5``` sections in this tutorial:
 
-+ ```1``` - Java Objects Life Cycle.
 
-+ ```2``` - Java Virtual Machine Flags.
++ ```1``` - Java Native Interface Tutorial.
 
-+ ```3``` - Java Native Interface Tutorial.
-
-+ ```4``` - Eclipse Collections Framework.
-
-+ ```5``` - Shopping Cart Problem.
++ ```2``` - Eclipse Collections Framework.
 
 If you do have any question, please ask. Don't be shy!
 
